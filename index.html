@@ -1,1 +1,898 @@
-<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FART UA</title><style>body{margin:0;background:#111;color:#fff;font-family:Arial;text-align:center}header{padding:80px;background:linear-gradient(#300,#000)}h1{color:red;font-size:64px}a{display:inline-block;margin:10px;padding:15px 25px;background:#b00;color:#fff;text-decoration:none;border-radius:8px}section{padding:40px;max-width:900px;margin:auto}</style></head><body><header><h1>FART UA</h1><p>Український GTA RP сервер</p><a href="#">🎮 Почати гру</a><a href="#">⬇️ Завантажити гру</a><a href="#">💬 Discord</a><a href="#">📖 Форум</a></header><section><h2>Про сервер</h2><p>Ласкаво просимо!</p><h2>Можливості</h2><p>Роботи, авто, фракції.</p><h2>Як грати (F8)</h2><p>Відкрийте F8 та введіть IP сервера.</p></section></body></html>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FART UA | GTA RP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#090909;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1920&q=80");
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:34px;
+font-weight:800;
+color:#ff1e1e;
+text-shadow:0 0 20px red;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff2b2b;
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+header h1{
+font-size:95px;
+color:#ff2222;
+text-shadow:0 0 35px red;
+animation:pulse 2s infinite;
+}
+
+header p{
+font-size:24px;
+margin-top:20px;
+color:#ddd;
+max-width:700px;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.btn{
+padding:18px 42px;
+border-radius:10px;
+background:#c00000;
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+box-shadow:0 0 25px rgba(255,0,0,.6);
+}
+
+.btn:hover{
+background:#ff0000;
+transform:translateY(-6px);
+box-shadow:0 0 35px red;
+}
+
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+}
+
+.title{
+font-size:45px;
+text-align:center;
+margin-bottom:60px;
+color:#ff2a2a;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(20,20,20,.85);
+padding:30px;
+border-radius:15px;
+border:1px solid rgba(255,0,0,.3);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 0 25px red;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#ff2f2f;
+}
+
+.card p{
+color:#ccc;
+line-height:1.7;
+}
+/* ===== СЕКЦІЯ ПРО СЕРВЕР ===== */
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about-box{
+background:rgba(15,15,15,.9);
+padding:35px;
+border-radius:20px;
+border-left:5px solid #ff2020;
+box-shadow:0 0 20px rgba(255,0,0,.25);
+}
+
+.about-box h2{
+font-size:32px;
+color:#ff3030;
+margin-bottom:20px;
+}
+
+.about-box p{
+font-size:17px;
+color:#ccc;
+line-height:1.8;
+}
+
+
+/* ===== СТАТИСТИКА ===== */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.stat{
+background:#111;
+padding:35px;
+border-radius:15px;
+border:1px solid rgba(255,0,0,.4);
+}
+
+.stat h2{
+font-size:45px;
+color:#ff2222;
+text-shadow:0 0 15px red;
+}
+
+.stat p{
+margin-top:10px;
+color:#bbb;
+}
+
+
+/* ===== ФРАКЦІЇ ===== */
+
+.factions{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.faction{
+background:linear-gradient(145deg,#151515,#090909);
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+}
+
+.faction:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(255,0,0,.7);
+}
+
+.faction span{
+font-size:50px;
+}
+
+.faction h3{
+margin:15px 0;
+color:#ff2929;
+}
+
+.faction p{
+color:#ccc;
+}
+
+
+/* ===== ГАЛЕРЕЯ ===== */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+filter:brightness(.8);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+filter:brightness(1);
+box-shadow:0 0 25px red;
+}
+
+
+/* ===== АДАПТИВ ===== */
+
+@media(max-width:900px){
+
+nav{
+padding:20px;
+}
+
+.logo{
+font-size:26px;
+}
+
+nav ul{
+display:none;
+}
+
+header h1{
+font-size:55px;
+}
+
+header p{
+font-size:18px;
+}
+
+.title{
+font-size:35px;
+}
+
+}
+/* ===== ДОНАТ ===== */
+
+.donate{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.donate-card{
+background:rgba(20,20,20,.9);
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid #ff2020;
+transition:.4s;
+}
+
+.donate-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px red;
+}
+
+.donate-card h3{
+font-size:28px;
+color:#ff2525;
+}
+
+.price{
+font-size:40px;
+font-weight:800;
+margin:20px 0;
+color:white;
+}
+
+.donate-card ul{
+list-style:none;
+color:#ccc;
+line-height:2;
+}
+
+.donate-btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#d00000;
+border-radius:10px;
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.donate-btn:hover{
+background:red;
+}
+
+
+/* ===== ПРАВИЛА ===== */
+
+.rules{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.rule{
+background:#111;
+padding:30px;
+border-radius:15px;
+border-top:4px solid red;
+}
+
+.rule h3{
+color:#ff3030;
+margin-bottom:15px;
+}
+
+.rule p{
+color:#bbb;
+line-height:1.7;
+}
+
+
+/* ===== КОМАНДА ===== */
+
+.team{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+.member{
+background:#151515;
+padding:25px;
+text-align:center;
+border-radius:20px;
+transition:.3s;
+}
+
+.member:hover{
+box-shadow:0 0 30px red;
+transform:translateY(-8px);
+}
+
+.member img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid red;
+}
+
+.member h3{
+margin-top:15px;
+color:#ff2525;
+}
+
+.member p{
+color:#aaa;
+}
+
+
+/* ===== DISCORD ===== */
+
+.discord{
+background:
+linear-gradient(
+135deg,
+rgba(255,0,0,.2),
+rgba(0,0,0,.8)
+),
+#111;
+
+padding:60px 30px;
+border-radius:25px;
+text-align:center;
+border:1px solid red;
+}
+
+.discord h2{
+font-size:45px;
+color:white;
+}
+
+.discord p{
+margin:20px auto;
+max-width:700px;
+color:#ccc;
+font-size:18px;
+}
+
+.discord a{
+display:inline-block;
+padding:18px 45px;
+background:#5865F2;
+color:white;
+border-radius:12px;
+text-decoration:none;
+font-size:20px;
+transition:.3s;
+}
+
+.discord a:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #5865F2;
+}
+
+
+/* ===== FAQ ===== */
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.question{
+background:#151515;
+margin-bottom:15px;
+padding:25px;
+border-radius:12px;
+border-left:4px solid red;
+}
+
+.question h3{
+color:#ff3030;
+margin-bottom:10px;
+}
+
+.question p{
+color:#bbb;
+}
+
+
+/* ===== ПЛАВАЮЧА КНОПКА ===== */
+
+.top{
+position:fixed;
+right:30px;
+bottom:30px;
+width:55px;
+height:55px;
+background:red;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:25px;
+text-decoration:none;
+box-shadow:0 0 20px red;
+transition:.3s;
+}
+
+.top:hover{
+transform:translateY(-5px);
+}
+/* ===== HTML КОНТЕНТ ===== */
+
+<header>
+<h1>FART UA</h1>
+
+<p>
+Український GTA RP сервер нового покоління.
+Реалістичний світ, фракції, економіка та незабутні пригоди.
+</p>
+
+<div class="buttons">
+
+<a class="btn" href="#about">
+Почати гру
+</a>
+
+<a class="btn" href="#discord">
+Discord
+</a>
+
+</div>
+
+</header>
+
+
+<section id="about">
+
+<h2 class="title">
+Про сервер
+</h2>
+
+<div class="about">
+
+<div class="about-box">
+
+<h2>
+FART UA GTA RP
+</h2>
+
+<p>
+Поринь у величезний рольовий світ.
+Створюй власну історію, вступай у фракції,
+розвивай бізнес та ставай легендою міста.
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<h2>
+Наші переваги
+</h2>
+
+<p>
+✔ Стабільний сервер<br>
+✔ Українська спільнота<br>
+✔ Активна адміністрація<br>
+✔ Унікальні системи<br>
+✔ Регулярні оновлення
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Статистика
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>50K+</h2>
+<p>Гравців</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Онлайн</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Квестів</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Фракцій</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Фракції
+</h2>
+
+
+<div class="factions">
+
+<div class="faction">
+<span>🚔</span>
+<h3>Поліція</h3>
+<p>Захищай місто та підтримуй порядок.</p>
+</div>
+
+
+<div class="faction">
+<span>🏥</span>
+<h3>МОЗ</h3>
+<p>Допомагай людям та рятуй життя.</p>
+</div>
+
+
+<div class="faction">
+<span>💰</span>
+<h3>Бізнес</h3>
+<p>Створюй власну імперію.</p>
+</div>
+
+
+<div class="faction">
+<span>🔫</span>
+<h3>Кримінал</h3>
+<p>Будуй свою історію у тіні.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Галерея
+</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8">
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f">
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Донат
+</h2>
+
+
+<div class="donate">
+
+
+<div class="donate-card">
+
+<h3>VIP</h3>
+
+<div class="price">
+99₴
+</div>
+
+<ul>
+<li>VIP статус</li>
+<li>Бонуси</li>
+<li>Ексклюзивні речі</li>
+</ul>
+
+<a href="#" class="donate-btn">
+Купити
+</a>
+
+</div>
+
+
+
+<div class="donate-card">
+
+<h3>PREMIUM</h3>
+
+<div class="price">
+199₴
+</div>
+
+<ul>
+<li>Premium статус</li>
+<li>Гроші в грі</li>
+<li>Унікальні можливості</li>
+</ul>
+
+<a href="#" class="donate-btn">
+Купити
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Команда
+</h2>
+
+
+<div class="team">
+
+<div class="member">
+
+<img src="https://i.pravatar.cc/150">
+
+<h3>FART Owner</h3>
+
+<p>Засновник проекту</p>
+
+</div>
+
+
+<div class="member">
+
+<img src="https://i.pravatar.cc/151">
+
+<h3>Admin</h3>
+
+<p>Головний адміністратор</p>
+
+</div>
+
+
+<div class="member">
+
+<img src="https://i.pravatar.cc/152">
+
+<h3>Developer</h3>
+
+<p>Розробник сервера</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="discord">
+
+<div class="discord">
+
+<h2>
+Наш Discord
+</h2>
+
+<p>
+Приєднуйся до нашої спільноти,
+отримуй новини та спілкуйся з гравцями.
+</p>
+
+<a href="#">
+Приєднатися
+</a>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+FAQ
+</h2>
+
+
+<div class="faq">
+
+
+<div class="question">
+
+<h3>
+Як почати грати?
+</h3>
+
+<p>
+Завантаж GTA та підключись до нашого сервера.
+</p>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+Чи є підтримка?
+</h3>
+
+<p>
+Так, адміністрація працює щодня.
+</p>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+Чи можна створити бізнес?
+</h3>
+
+<p>
+Так, система бізнесів доступна всім гравцям.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<a href="#" class="top">
+↑
+</a>
+
+
+
+<footer style="
+background:#050505;
+padding:40px;
+text-align:center;
+color:#777;
+">
+
+<h2 style="color:red;">
+FART UA
+</h2>
+
+<p>
+© 2026 FART UA GTA RP. Всі права захищені.
+</p>
+
+</footer>
